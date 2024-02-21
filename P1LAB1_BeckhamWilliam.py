@@ -5,11 +5,17 @@
 
 
 
-
-first="William"
+# showing how to print it using input plus multiple variables
+first=input()
 w = "Hey"
 x = "Welcome"
 y = "to"
 z = "zyBooks!"
 print(w, first)
 print(x, y, z)
+
+print('\n')
+
+# showing how to print it with only 1 variable
+print('Hey', first)
+print('Welcome to Zybooks!')
