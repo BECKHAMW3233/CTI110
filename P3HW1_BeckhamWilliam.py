@@ -40,6 +40,6 @@ elif avg >= 70:
     print('Your letter grade is: C')
 elif avg >= 60:
     print('Your letter grade is: D')
-elif avg <= 59:
+else:
     print('Your letter grade is: F')
 print('\n')
