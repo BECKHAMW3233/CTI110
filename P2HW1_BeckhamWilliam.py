@@ -36,5 +36,5 @@ print(f"{'Initial Budget:':<19} ${budget:.2f}")
 print(f"{'Fuel:':<19} ${fuel:.2f}")
 print(f"{'Accomodation:':<19} ${lodging:.2f}")
 print(f"{'Food:':<19} ${food:.2f}", "\n")
-bal= budget - lodging - fuel - food
+bal = budget - lodging - fuel - food
 print(f"{'Remaining Balance:':<19} ${bal:.2f}")
