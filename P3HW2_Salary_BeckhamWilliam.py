@@ -34,7 +34,7 @@ gross = reg_pay + ot_pay
 print('-------------------------------------')
 print(f"{'Employee':<16} {name}")
 print()
-print(f"{'HoursWorked':<14} {'Pay Rate':<12} {'OverTime':<12} {'Overtime Pay':<20} {'RegHour Pay':<20} {'Gross Pay'}")
+print(f"{'Hours Worked':<14} {'Pay Rate':<12} {'OverTime':<12} {'Overtime Pay':<20} {'RegHour Pay':<20} {'Gross Pay'}")
 print('---------------------------------------------------------------------------------------------------')
 print(f"{hrs_work:<14.2f} {rate:<12.2f} {ot_hrs:<12.2f} ${ot_pay:<20.2f} ${reg_pay:<20.2f} ${gross:.2f}")
 print()
