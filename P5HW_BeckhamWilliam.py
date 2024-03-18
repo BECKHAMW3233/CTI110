@@ -16,80 +16,83 @@ Program only terminates if user enters 3
 
 import random
 
+
 def generate_problem(operation):
-  num1 = random.randrange(1, 1000)
-  num2 = random.randrange(1, 1000)
-  if operation == "+":
-    problem = str(num1) + " + " + str(num2)
-    solution = num1 + num2
-  elif operation == "-":
-    problem = str(num1) + " - " + str(num2)
-    solution = num1 - num2
-  else:
-    return "Invalid operation"
-  return problem, solution
+    num1 = random.randrange(1, 1000)
+    num2 = random.randrange(1, 1000)
+    if operation == "+":
+        problem = str(num1) + " + " + str(num2)
+        solution = num1 + num2
+    elif operation == "-":
+        problem = str(num1) + " - " + str(num2)
+        solution = num1 - num2
+    else:
+        return "Invalid operation"
+    return problem, solution
+
 
 def main():
-  while True:
-    print("Choose an operation:")
-    print("1. Add Random Numbers")
-    print("2. Subtract Random Numbers")
-    print("3. Quit")
-    choice = input("Enter your choice (1-3): ")
-
-    if choice == "3":
-      print()
-      print("Thank you for playing...")
-      print("Bye\n")
-      break
-
-    if choice not in ("1", "2"):
-      print()
-      print("Invalid choice. Please choose 1, 2, or 3.\n")
-      continue
-
-    operation = "+" if choice == "1" else "-"
-    problem, solution = generate_problem(operation)
-    print()
-
-    attempts = 0  # Initialize attempts counter
-    guessed_numbers = []  # List to store guessed numbers
-
     while True:
-      print(problem)
-      answer = input("Enter your answer (or 'q' to return to menu): \n")
-      print()
+        print("Choose an operation:")
+        print("1. Add Random Numbers")
+        print("2. Subtract Random Numbers")
+        print("3. Quit")
+        choice = input("Enter your choice (1-3): ")
 
-      if answer.lower() == "q":
-        break
-      try:
-        answer = int(answer)
-        if answer == solution:
-          attempts += 1  # Increment attempts only for correct answer
-          print("Your answer was: ")
-          print(answer)
-          print("Congratulations!!!!!! Your Answer is Correct!\n")
-          break
-        elif answer > solution:
-          attempts += 1  # Increment attempts
-          print("Try again: ")
-          print(answer)
-          print("Your guess was a bit too high. Try again.\n")
-        else:
-          attempts += 1  # Increment attempts
-          print("Try again: ")
-          print(answer)
-          print("Your guess was a bit too low. Try again.\n")
-      except ValueError:
-        print("Try again.")
+        if choice == "3":
+            print()
+            print("Thank you for playing...")
+            print("Bye\n")
+            break
 
-    # Show attempted solutions and attempts only if the answer was correct
-    if answer == solution:
-      if guessed_numbers:  # Check if list is not empty before accessing elements
-          print(f"You answered in {attempts} attempts.")
-          print("Your attempted answers were: ", guessed_numbers)
-    else:
-      print(f"You attempted to answer {attempts} times, before you choose to quit.\n")  # Show attempts even when quitting with 'q'
-      print("Your attempted answers were: ", guessed_numbers)
+        if choice not in ("1", "2"):
+            print()
+            print("Invalid choice. Please choose 1, 2, or 3.\n")
+            continue
+
+        operation = "+" if choice == "1" else "-"
+        problem, solution = generate_problem(operation)
+        print()
+
+        attempts = 0  # Initialize attempts counter
+        guessed_numbers = []  # List to store guessed numbers
+
+        while True:
+            print(problem)
+            answer = input("Enter your answer (or 'q' to return to menu): \n")
+            print()
+
+            if answer.lower() == "q":
+                print("Please dont give up, try again.")
+                break
+            try:
+                answer = int(answer)
+                guessed_numbers.append(answer)  # Add guess to the list
+
+                if answer == solution:
+                    attempts += 1  # Increment attempts only for correct answer
+                    print("Your answer was: ")
+                    print(answer)
+                    print("Congratulations!!!!!! Your Answer is Correct!\n")
+                    break
+                elif answer > solution:
+                    attempts += 1
+                    print("Try again: ")
+                    print(answer)
+                    print("Your guess was a bit too high. Try again.\n")
+                else:
+                    attempts += 1
+                    print("Try again: ")
+                    print(answer)
+                    print("Your guess was a bit too low. Try again.\n")
+            except ValueError:
+                print("Try again.")
+
+        # Print attempted solutions and attempts regardless of answer
+        print(f"You attempted to answer {attempts} times, before you choose to quit.\n")
+        print("Your attempted answers were: ", guessed_numbers,)
+        print("\n")
+
+
 if __name__ == "__main__":
-  main()
+    main()
