@@ -6,7 +6,7 @@
 
 
 # showing how to print it using input plus multiple variables
-first=input()
+first=input("What is your name?")
 w = "Hey"
 x = "Welcome"
 y = "to"

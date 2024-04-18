@@ -9,7 +9,7 @@ import turtle
 # Function to draw a triangle
 def draw_triangle(t):
     for _ in range(3):
-        t.forward(150)
+        t.forward(150) 
         t.left(120)
 
 # Function to draw a square
@@ -48,7 +48,7 @@ def draw_eye(t):
 def draw_nose(t):
     t.pendown()
     t.pencolor("black")
-    t.fillcolor("pink")
+    t.fillcolor("black")
     t.begin_fill()
     t.circle(25)
     t.end_fill()
@@ -131,12 +131,12 @@ def main():
 
     # Set turtle properties
     t.pensize(5)  # Set line thickness
-    t.speed(1)
+    t.speed(2)
     t.penup()
     t.goto(-150,150)
     t.pendown()
     t.pencolor("pink")
-    t.fillcolor("grey")
+    t.fillcolor("pink")
     t.begin_fill()
 
 
@@ -156,9 +156,9 @@ def main():
     t.end_fill()
     t.penup()
 
-    t.goto(-125,160)
+    t.goto(-125,150)
     draw_sm_triangle(t)
-    t.goto(25,160)
+    t.goto(25,150)
     draw_sm_triangle(t)
 
     # Draw a simple face on kitty
@@ -178,7 +178,7 @@ def main():
     draw_mouth(t)
 
     t.goto(400,400)
-   
+    
     print("meow I'm a kitty meow")
 
     # Keep the window open

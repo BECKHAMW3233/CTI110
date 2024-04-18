@@ -64,6 +64,7 @@ def main():
 
             if answer.lower() == "q":
                 print("Please dont give up, try again.")
+                print("I believe you can do this, never give up!!!")
                 break
             try:
                 answer = int(answer)
@@ -89,7 +90,7 @@ def main():
                 print("Try again.")
 
         # Print attempted solutions and attempts regardless of answer
-        print(f"You attempted to answer {attempts} times, before you choose to quit.\n")
+        print(f"You attempted to answer {attempts} times.\n")
         print("Your attempted answers were: ", guessed_numbers,)
         print("\n")
 
